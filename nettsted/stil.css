@@ -210,15 +210,26 @@ main > section {
 }
 
 .topp-bilde,
-.lokalene-bilde {
+.bildegalleri figure {
   margin: 0;
 }
 
 .topp-bilde img,
-.lokalene-bilde img {
+.bildegalleri img {
   width: 100%;
   border-radius: 14px;
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
+}
+
+/* Bildene i lokalene */
+.bildegalleri {
+  display: grid;
+  gap: 24px;
+}
+
+.bildegalleri img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
 }
 
 .topp-bilde img {
@@ -452,6 +463,14 @@ main > .kontakt {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .bildegalleri {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .lokalene-tekst {
+    max-width: 40em;
+  }
+
   .skjemafelt-bredt {
     grid-column: 1 / -1;
   }
@@ -473,12 +492,6 @@ main > .kontakt {
 
   .topp-bilde img {
     aspect-ratio: 5 / 6;
-  }
-
-  .lokalene {
-    grid-template-columns: 0.85fr 1.15fr;
-    align-items: center;
-    gap: 56px;
   }
 
   .punkter {
