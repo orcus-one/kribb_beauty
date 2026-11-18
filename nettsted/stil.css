@@ -416,11 +416,6 @@ main > .kontakt {
   color: var(--svart);
 }
 
-.kontakt-navn {
-  margin: 1.5rem auto 0;
-  color: var(--gull-lys);
-}
-
 /* Bunnen av siden */
 .sidefot {
   padding: 28px var(--marg);
