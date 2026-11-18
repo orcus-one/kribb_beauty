@@ -209,6 +209,14 @@ main > section {
   max-width: 34em;
 }
 
+.oppstart {
+  max-width: 34em;
+  margin: 1rem 0 0;
+  padding-left: 14px;
+  border-left: 4px solid var(--gull);
+  font-weight: 500;
+}
+
 .topp-bilde,
 .for-hvem-bilde {
   margin: 0;
