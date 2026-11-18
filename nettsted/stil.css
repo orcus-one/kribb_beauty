@@ -291,6 +291,14 @@ figcaption {
   color: var(--dempet);
 }
 
+/* Liten, dempet opplysning under en bildetekst */
+.bildemerknad {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.78rem;
+  color: #7b858f;
+}
+
 /* Beliggenheten og hvem det passer for */
 .beliggenheten p,
 .for-hvem p {
