@@ -235,7 +235,7 @@ main > section {
 .topp-bilde img {
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  object-position: center 40%;
+  object-position: 60% 65%;
 }
 
 /* Hva du får */
@@ -464,7 +464,7 @@ main > .kontakt {
   }
 
   .bildegalleri {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .lokalene-tekst {
