@@ -20,7 +20,7 @@
       <img src="bilder/kribb-logo.png" alt="Kribb" width="490" height="135">
       <span class="merke-tillegg">beauty</span>
     </a>
-    <a class="knapp knapp-liten" href="#kontakt">Ta kontakt</a>
+    <a class="knapp knapp-liten" href="#interesse">Meld interesse</a>
   </header>
 
   <main>
@@ -36,7 +36,7 @@
           der flere selvstendige holder til under samme tak.
         </p>
         <div class="knapperad">
-          <a class="knapp" href="#kontakt">Ta kontakt</a>
+          <a class="knapp" href="#interesse">Meld interesse</a>
           <a class="knapp knapp-lys" href="#lokalene">Se lokalene</a>
         </div>
       </div>
@@ -133,10 +133,59 @@
       </p>
     </section>
 
+    <section class="interesse" id="interesse">
+      <div class="interesse-innhold">
+        <h2>Meld interesse</h2>
+        <p>
+          Fortell oss litt om deg og hva du driver med, så tar Kenneth kontakt. Har du ikke
+          salong eller organisasjonsnummer ennå, lar du de feltene stå tomme.
+        </p>
+
+        <form id="interesseskjema" class="skjema">
+          <div class="skjemafelt">
+            <label for="navn">Navn</label>
+            <input id="navn" name="navn" type="text" autocomplete="name" maxlength="200" required>
+          </div>
+          <div class="skjemafelt">
+            <label for="telefon">Telefon</label>
+            <input id="telefon" name="telefon" type="tel" autocomplete="tel" minlength="5" maxlength="30" required>
+          </div>
+          <div class="skjemafelt">
+            <label for="epost">E-post</label>
+            <input id="epost" name="epost" type="email" autocomplete="email" maxlength="200" required>
+          </div>
+          <div class="skjemafelt">
+            <label for="salongnavn">Salongnavn <span class="valgfritt">valgfritt</span></label>
+            <input id="salongnavn" name="salongnavn" type="text" autocomplete="organization" maxlength="200">
+          </div>
+          <div class="skjemafelt">
+            <label for="organisasjonsnummer">Organisasjonsnummer <span class="valgfritt">valgfritt</span></label>
+            <input id="organisasjonsnummer" name="organisasjonsnummer" type="text" inputmode="numeric" maxlength="11">
+          </div>
+          <div class="skjemafelt skjemafelt-bredt">
+            <label for="melding">Litt om deg og hva du driver med <span class="valgfritt">valgfritt</span></label>
+            <textarea id="melding" name="melding" rows="5" maxlength="2000"></textarea>
+          </div>
+          <div class="skjult-felt" aria-hidden="true">
+            <label for="robotfelt">La dette feltet stå tomt</label>
+            <input id="robotfelt" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="skjemafelt-bredt">
+            <button class="knapp" type="submit">Send inn</button>
+            <p class="skjema-merknad">
+              Vi bruker opplysningene bare til å ta kontakt med deg om Kribb Beauty.
+            </p>
+          </div>
+        </form>
+
+        <p id="skjema-tilbakemelding" class="skjema-tilbakemelding" role="status" hidden></p>
+      </div>
+    </section>
+
     <section class="kontakt" id="kontakt">
-      <h2>Vil du vite mer?</h2>
+      <h2>Vil du heller ta en prat?</h2>
       <p>
-        Ta kontakt med Kenneth, så tar vi en prat og en runde i lokalene.
+        Ring eller send en e-post til Kenneth, så tar vi en prat og en runde i lokalene.
       </p>
       <div class="knapperad">
         <a class="knapp" href="tel:+4797591548">Ring 975 91 548</a>
@@ -151,6 +200,8 @@
     <p>Kribb Beauty, Vestre Gate 7, Arendal</p>
     <p>Kribb er et registrert varemerke som tilhører Kgdi Holding AS.</p>
   </footer>
+
+  <script src="skjema.js"></script>
 
 </body>
 </html>
