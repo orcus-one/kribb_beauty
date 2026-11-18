@@ -210,28 +210,15 @@ main > section {
 }
 
 .topp-bilde,
-.for-hvem-bilde,
-.bildegalleri figure {
+.for-hvem-bilde {
   margin: 0;
 }
 
 .topp-bilde img,
-.for-hvem-bilde img,
-.bildegalleri img {
+.for-hvem-bilde img {
   width: 100%;
   border-radius: 14px;
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
-}
-
-/* Bildene i lokalene */
-.bildegalleri {
-  display: grid;
-  gap: 24px;
-}
-
-.bildegalleri img {
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
 }
 
 .topp-bilde img {
@@ -493,10 +480,6 @@ main > .kontakt {
   }
 
   .skjema {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .bildegalleri {
     grid-template-columns: repeat(2, 1fr);
   }
 
