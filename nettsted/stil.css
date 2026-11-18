@@ -210,11 +210,13 @@ main > section {
 }
 
 .topp-bilde,
+.for-hvem-bilde,
 .bildegalleri figure {
   margin: 0;
 }
 
 .topp-bilde img,
+.for-hvem-bilde img,
 .bildegalleri img {
   width: 100%;
   border-radius: 14px;
@@ -303,6 +305,17 @@ figcaption {
 .beliggenheten p,
 .for-hvem p {
   max-width: 40em;
+}
+
+.for-hvem {
+  display: grid;
+  gap: 32px;
+}
+
+.for-hvem-bilde img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 62%;
 }
 
 /* Meld interesse */
@@ -500,6 +513,16 @@ main > .kontakt {
 
   .topp-bilde img {
     aspect-ratio: 5 / 6;
+  }
+
+  .for-hvem {
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 56px;
+  }
+
+  .for-hvem-bilde img {
+    aspect-ratio: 1 / 1;
   }
 
   .punkter {
