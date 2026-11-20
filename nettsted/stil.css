@@ -100,11 +100,22 @@ button:focus-visible {
 
 .merke {
   display: flex;
-  flex-direction: column;
-  gap: 3px;
+  align-items: center;
+  gap: 10px;
   color: var(--blekk);
   text-decoration: none;
   line-height: 1;
+}
+
+.merke img {
+  width: auto;
+  height: 40px;
+}
+
+.merke-tekst {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .merke-navn {
