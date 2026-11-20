@@ -523,6 +523,20 @@ figcaption {
   font-size: 1.45rem;
 }
 
+.oversikt h4 {
+  margin: 1.5rem 0 0;
+  color: var(--dempet);
+  font-family: var(--brodtekst);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.oversikt h4 + ul {
+  margin-top: 0.7rem;
+}
+
 .oversikt ul {
   display: grid;
   gap: 0.55rem;
