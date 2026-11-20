@@ -503,6 +503,7 @@ figcaption {
 .med-og-selv {
   display: grid;
   gap: 20px;
+  align-items: start;
 }
 
 .oversikt {
@@ -566,6 +567,68 @@ figcaption {
 
 .oversikt-selv li::before {
   border: 2px solid var(--dempet);
+}
+
+/* Samarbeidet med EasySalon */
+main > .kassasystem {
+  padding-top: 0;
+}
+
+.kassasystem-innhold {
+  display: grid;
+  gap: 28px;
+  max-width: var(--sidebredde);
+  margin: 0 auto;
+  padding: 28px 24px;
+  border-radius: var(--runding);
+  background: var(--rosa);
+}
+
+.kassasystem-tekst h2 {
+  font-size: clamp(1.6rem, 3.6vw, 2.1rem);
+  margin-bottom: 1rem;
+}
+
+.kassasystem-tekst p {
+  max-width: 36em;
+}
+
+.kassasystem-tekst .knapp {
+  margin-top: 0.5rem;
+}
+
+.kassasystem-punkter {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.kassasystem-punkter li {
+  padding: 14px 0;
+  border-top: 1px solid var(--rosa-dyp);
+  color: var(--dempet);
+}
+
+.kassasystem-punkter li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.kassasystem-punkter strong {
+  display: block;
+  color: var(--blekk);
+  font-family: var(--overskrift);
+  font-size: 1.1rem;
+}
+
+@media (min-width: 980px) {
+  .kassasystem-innhold {
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    padding: 48px;
+  }
 }
 
 /* Lokalene */
