@@ -930,3 +930,10 @@ main > .kontakt {
     transition: none;
   }
 }
+
+/* Menyen har fem punkter og trenger litt mer bredde enn resten av skrivebordsoppsettet */
+@media (max-width: 1099px) {
+  .sidemeny {
+    display: none;
+  }
+}
