@@ -584,6 +584,20 @@ main > .kassasystem {
   background: var(--rosa);
 }
 
+/* Den andre samarbeidsseksjonen står på hvit flate, så de to skiller seg fra hverandre */
+.kassasystem-lys {
+  background: var(--flate);
+  border: 1px solid var(--linje);
+}
+
+.kassasystem-lys .kassasystem-punkter li {
+  border-top-color: var(--linje);
+}
+
+.kassasystem + .kassasystem {
+  margin-top: -36px;
+}
+
 .kassasystem-tekst h2 {
   font-size: clamp(1.6rem, 3.6vw, 2.1rem);
   margin-bottom: 1rem;
