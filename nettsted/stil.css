@@ -277,6 +277,20 @@ main > .topp {
   max-width: 34em;
 }
 
+/* Lenke inne i løpende tekst */
+.tekstlenke {
+  color: var(--baer);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  white-space: nowrap;
+}
+
+.tekstlenke:hover {
+  color: var(--baer-mork);
+}
+
 .oppstart {
   max-width: 34em;
   margin: 1.25rem 0 0;
