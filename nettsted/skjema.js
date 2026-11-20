@@ -13,6 +13,13 @@ function visTilbakemelding(tekst, type) {
   tilbakemelding.hidden = false;
 }
 
+// Knappene under hvert alternativ velger det samme alternativet i skjemaet.
+document.querySelectorAll('.velg-alternativ').forEach((knapp) => {
+  knapp.addEventListener('click', () => {
+    skjema.elements.alternativ.value = knapp.dataset.alternativ;
+  });
+});
+
 skjema.addEventListener('submit', async (hendelse) => {
   hendelse.preventDefault();
   tilbakemelding.hidden = true;
@@ -39,6 +46,7 @@ skjema.addEventListener('submit', async (hendelse) => {
     email: felt.get('epost').trim(),
     salongnavn: felt.get('salongnavn').trim(),
     organisasjonsnummer: organisasjonsnummer,
+    alternativ: felt.get('alternativ'),
     melding: felt.get('melding').trim(),
   };
 

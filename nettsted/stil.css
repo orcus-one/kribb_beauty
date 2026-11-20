@@ -1,17 +1,21 @@
-/* Farger og skrift er hentet fra profilen på kribb.no. */
+/* Uttrykket for Kribb Beauty: lys, rosa-lilla grunn, mørk aubergine i teksten og en
+   bærfarge i knapper og priser. Toppbildet har bue i overkant, som et salongspeil. */
 :root {
-  --gull: #e4b77d;
-  --gull-lys: #f0d4a8;
-  --gull-mork: #d19f5f;
-  --blagra: #2c3e50;
-  --svart: #1a1a1a;
-  --lys: #f8f9fa;
-  --hvit: #ffffff;
-  --dempet: #55606b;
-  --overskrift: 'Cabinet Grotesk', 'Segoe UI', system-ui, sans-serif;
-  --brodtekst: 'Roboto', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --grunn: #fcf8fa;
+  --flate: #ffffff;
+  --rosa: #f6e4ec;
+  --rosa-dyp: #edcfdc;
+  --blekk: #27142c;
+  --dempet: #6b5a70;
+  --baer: #a3235a;
+  --baer-mork: #7f1845;
+  --messing: #c39650;
+  --linje: #e8dce4;
+  --overskrift: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+  --brodtekst: 'Instrument Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
   --sidebredde: 1120px;
   --marg: 20px;
+  --runding: 22px;
 }
 
 *,
@@ -26,8 +30,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--hvit);
-  color: var(--svart);
+  background: var(--grunn);
+  color: var(--blekk);
   font-family: var(--brodtekst);
   font-size: 1.0625rem;
   line-height: 1.65;
@@ -44,49 +48,43 @@ h1,
 h2,
 h3 {
   font-family: var(--overskrift);
-  line-height: 1.15;
+  line-height: 1.08;
   margin: 0;
   text-wrap: balance;
+  letter-spacing: -0.02em;
 }
 
 h1 {
-  font-size: clamp(2.25rem, 7vw, 3.75rem);
+  font-size: clamp(2.4rem, 7.2vw, 4.1rem);
   font-weight: 800;
-  letter-spacing: -0.01em;
 }
 
 h2 {
-  font-size: clamp(1.75rem, 4.5vw, 2.5rem);
+  font-size: clamp(1.9rem, 4.6vw, 2.75rem);
   font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-/* Gullstreken under seksjonsoverskriftene */
-h2::after {
-  content: '';
-  display: block;
-  width: 56px;
-  height: 4px;
-  margin-top: 0.75rem;
-  background: var(--gull);
-  border-radius: 2px;
 }
 
 h3 {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
 }
 
 p {
   margin: 0 0 1rem;
 }
 
-section[id] {
-  scroll-margin-top: 84px;
+section[id],
+article[id] {
+  scroll-margin-top: 92px;
 }
 
-/* Sidehodet med logo */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--baer);
+  outline-offset: 3px;
+}
+
+/* Sidehodet med logo. Logoen er svart på hvitt, så sidehodet er hvitt. */
 .sidehode {
   position: sticky;
   top: 0;
@@ -95,63 +93,78 @@ section[id] {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 12px var(--marg);
-  background: var(--hvit);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 10px var(--marg);
+  background: var(--flate);
+  border-bottom: 1px solid var(--linje);
 }
 
 .merke {
   display: flex;
   align-items: flex-end;
   gap: 8px;
-  color: var(--svart);
+  color: var(--blekk);
   text-decoration: none;
 }
 
 .merke img {
-  width: 108px;
+  width: 104px;
 }
 
 .merke-tillegg {
   font-family: 'Courier New', Courier, monospace;
   font-size: 1.15rem;
   line-height: 1;
-  color: var(--gull-mork);
+  color: var(--baer);
   padding-bottom: 2px;
+}
+
+.sidemeny {
+  display: none;
+}
+
+.sidemeny a {
+  color: var(--blekk);
+  font-weight: 500;
+  font-size: 0.98rem;
+  text-decoration: none;
+}
+
+.sidemeny a:hover {
+  color: var(--baer);
 }
 
 /* Knapper */
 .knapp {
   display: inline-block;
   padding: 14px 26px;
-  border: 2px solid var(--gull);
+  border: 2px solid var(--baer);
   border-radius: 999px;
-  background: var(--gull);
-  color: var(--svart);
+  background: var(--baer);
+  color: #ffffff;
   font-family: var(--overskrift);
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   font-weight: 700;
   text-decoration: none;
   text-align: center;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
-.knapp:hover,
-.knapp:focus-visible {
-  background: var(--gull-mork);
-  border-color: var(--gull-mork);
+.knapp:hover {
+  background: var(--baer-mork);
+  border-color: var(--baer-mork);
 }
 
 .knapp-lys {
   background: transparent;
-  border-color: var(--svart);
+  border-color: var(--blekk);
+  color: var(--blekk);
 }
 
-.knapp-lys:hover,
-.knapp-lys:focus-visible {
-  background: var(--svart);
-  border-color: var(--svart);
-  color: var(--hvit);
+.knapp-lys:hover {
+  background: var(--blekk);
+  border-color: var(--blekk);
+  color: #ffffff;
 }
 
 .knapp-liten {
@@ -168,118 +181,88 @@ section[id] {
 
 /* Felles ramme for seksjonene */
 main > section {
-  padding: 56px var(--marg);
+  padding: 60px var(--marg);
 }
 
-.tilbudet,
-.lokalene,
-.beliggenheten,
 .for-hvem,
-.kontakt,
-.topp {
+.alternativene,
+.med-i-prisen,
+.lokalene,
+.topp-innhold {
   max-width: var(--sidebredde);
   margin: 0 auto;
 }
 
+.seksjonsinnledning {
+  max-width: 44em;
+  margin-bottom: 2rem;
+}
+
+.seksjonsinnledning p {
+  margin: 1rem 0 0;
+  color: var(--dempet);
+  font-size: 1.1rem;
+}
+
 /* Toppseksjonen */
-.topp {
+main > .topp {
+  background:
+    radial-gradient(60rem 30rem at 85% -10%, var(--rosa-dyp), transparent 70%),
+    var(--rosa);
+  padding-top: 44px;
+}
+
+.topp-innhold {
   display: grid;
-  gap: 32px;
-  padding-top: 40px;
+  gap: 40px;
 }
 
 .stedsmerke {
   display: inline-block;
-  margin: 0 6px 0.6rem 0;
-  padding: 5px 14px;
+  margin: 0 0 1rem;
+  padding: 6px 14px;
+  border: 1.5px solid var(--blekk);
   border-radius: 999px;
-  background: var(--gull-lys);
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.topp h1 {
-  margin-top: 0.5rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .ingress {
-  margin-top: 1.25rem;
+  margin-top: 1.4rem;
   font-size: 1.2rem;
-  color: var(--blagra);
   max-width: 34em;
 }
 
 .oppstart {
   max-width: 34em;
-  margin: 1rem 0 0;
-  padding-left: 14px;
-  border-left: 4px solid var(--gull);
+  margin: 1.25rem 0 0;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: var(--flate);
   font-weight: 500;
 }
 
 .topp-bilde,
-.for-hvem-bilde {
+.alternativ-bilde {
   margin: 0;
 }
 
-.topp-bilde img,
-.for-hvem-bilde img {
-  width: 100%;
-  border-radius: 14px;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
-}
-
+/* Bue i overkant, som et salongspeil */
 .topp-bilde img {
-  aspect-ratio: 4 / 3;
+  width: 100%;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: 60% 65%;
+  border-radius: 999px 999px var(--runding) var(--runding);
+  border: 6px solid var(--flate);
+  box-shadow: 0 24px 50px rgba(39, 20, 44, 0.18);
 }
 
-/* Hva du får */
-.punkter {
-  display: grid;
-  gap: 18px;
-  margin-top: 1.75rem;
-}
-
-.punkt {
-  padding: 24px;
-  border-top: 4px solid var(--gull);
-  border-radius: 12px;
-  background: var(--lys);
-}
-
-.punkt p {
-  margin: 0;
-  color: var(--blagra);
-}
-
-/* Lokalene */
-.lokalene {
-  display: grid;
-  gap: 32px;
-}
-
-.etasjer {
-  display: grid;
-  gap: 16px;
-  margin: 1.5rem 0 0;
-}
-
-.etasjer div {
-  padding-left: 16px;
-  border-left: 4px solid var(--gull);
-}
-
-.etasjer dt {
-  font-family: var(--overskrift);
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-.etasjer dd {
-  margin: 0;
-  color: var(--blagra);
+.topp-bilde {
+  max-width: 440px;
+  margin-inline: auto;
 }
 
 figcaption {
@@ -293,42 +276,274 @@ figcaption {
   display: block;
   margin-top: 2px;
   font-size: 0.78rem;
-  color: #7b858f;
+  opacity: 0.85;
 }
 
-/* Beliggenheten og hvem det passer for */
-.beliggenheten p,
-.for-hvem p {
+/* Hvem det passer for */
+.for-hvem {
+  display: grid;
+  gap: 24px;
+}
+
+.for-hvem-tekst p {
   max-width: 40em;
 }
 
-.for-hvem {
+.for-hvem-tekst p:first-child {
+  font-size: 1.2rem;
+}
+
+/* Rom og priser */
+.alternativ {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 28px 24px;
+  border: 1px solid var(--linje);
+  border-radius: var(--runding);
+  background: var(--flate);
+}
+
+.alternativ + .alternativrad,
+.alternativrad + .alternativ {
+  margin-top: 20px;
+}
+
+.alternativrad {
   display: grid;
-  gap: 32px;
+  gap: 20px;
 }
 
-/* Bildet er holdt lite og har en gullflate bak seg, så det ikke blir en stor, kald flate. */
-.for-hvem-bilde {
-  max-width: 380px;
-  padding-left: 14px;
+.alternativ h3 {
+  font-size: clamp(1.7rem, 4vw, 2.2rem);
 }
 
-.for-hvem-bilde img {
+.alternativ-merke {
+  margin: 0 0 0.6rem;
+  color: var(--baer);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pris {
+  margin: 0.9rem 0 1.1rem;
+  color: var(--dempet);
+  font-size: 0.98rem;
+}
+
+.belop {
+  display: block;
+  font-family: var(--overskrift);
+  font-size: clamp(2.6rem, 7vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--blekk);
+  font-variant-numeric: tabular-nums;
+}
+
+.alternativ p {
+  max-width: 38em;
+}
+
+.fakta {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 8px 28px;
+  width: 100%;
+  margin: 0.5rem 0 1.5rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--linje);
+}
+
+.fakta div {
+  min-width: 0;
+}
+
+.fakta dt {
+  color: var(--dempet);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.fakta dd {
+  margin: 2px 0 0;
+  font-family: var(--overskrift);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.alternativ .knapp {
+  margin-top: auto;
+}
+
+/* Eget rom er hovedtilbudet og får bilde og mørk flate */
+.alternativ-med-bilde {
+  display: grid;
+  gap: 28px;
+  background: var(--blekk);
+  border-color: var(--blekk);
+  color: #ffffff;
+}
+
+.alternativ-med-bilde .alternativ-innhold {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.alternativ-med-bilde .alternativ-merke {
+  color: var(--rosa-dyp);
+}
+
+.alternativ-med-bilde .belop {
+  color: #ffffff;
+}
+
+.alternativ-med-bilde .pris,
+.alternativ-med-bilde .fakta dt,
+.alternativ-med-bilde figcaption {
+  color: #cdbfd1;
+}
+
+.alternativ-med-bilde .fakta {
+  border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.alternativ-med-bilde .knapp {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: var(--blekk);
+}
+
+.alternativ-med-bilde .knapp:hover {
+  background: var(--rosa);
+  border-color: var(--rosa);
+}
+
+.alternativ-med-bilde .knapp:focus-visible {
+  outline-color: #ffffff;
+}
+
+.alternativ-bilde img {
+  width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: 70% 62%;
-  border-radius: 18px;
-  box-shadow: -14px 14px 0 var(--gull-lys);
+  border-radius: 14px;
 }
 
-.for-hvem-bilde figcaption {
-  margin-top: 26px;
+/* Plass i delt rom */
+.alternativ-delt {
+  display: grid;
+  gap: 8px;
+  background: var(--rosa);
+  border-color: var(--rosa-dyp);
+}
+
+.forbehold {
+  color: var(--dempet);
+  font-size: 0.95rem;
+}
+
+/* Hva som er med, og hva du holder selv */
+.med-og-selv {
+  display: grid;
+  gap: 20px;
+}
+
+.oversikt {
+  padding: 28px 24px;
+  border-radius: var(--runding);
+}
+
+.oversikt-med {
+  background: var(--flate);
+  border: 1px solid var(--linje);
+}
+
+.oversikt-selv {
+  border: 1.5px dashed var(--rosa-dyp);
+}
+
+.oversikt h3 {
+  font-size: 1.45rem;
+}
+
+.oversikt ul {
+  display: grid;
+  gap: 0.55rem;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.oversikt li {
+  position: relative;
+  padding-left: 1.7rem;
+}
+
+.oversikt li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+}
+
+.oversikt-med li::before {
+  background: var(--baer);
+}
+
+.oversikt-selv li::before {
+  border: 2px solid var(--dempet);
+}
+
+/* Lokalene */
+.lokalene {
+  display: grid;
+  gap: 24px;
+}
+
+.lokalene-tekst > p {
+  max-width: 40em;
+  font-size: 1.2rem;
+}
+
+.etasjer {
+  display: grid;
+  gap: 0;
+  margin: 1.5rem 0 0;
+}
+
+.etasjer div {
+  display: grid;
+  gap: 4px;
+  padding: 18px 0;
+  border-top: 1px solid var(--linje);
+}
+
+.etasjer dt {
+  font-family: var(--overskrift);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.etasjer dd {
+  margin: 0;
+  max-width: 40em;
+  color: var(--dempet);
 }
 
 /* Meld interesse */
 main > .interesse {
-  max-width: none;
-  background: var(--lys);
+  background: var(--rosa);
 }
 
 .interesse-innhold {
@@ -336,35 +551,41 @@ main > .interesse {
   margin: 0 auto;
 }
 
+.interesse-innhold > p {
+  margin-top: 1rem;
+}
+
 .skjema {
   display: grid;
   gap: 18px;
   margin-top: 1.75rem;
+  padding: 28px 22px;
+  border-radius: var(--runding);
+  background: var(--flate);
 }
 
 .skjemafelt label {
   display: block;
   margin-bottom: 6px;
-  font-family: var(--overskrift);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .valgfritt {
   margin-left: 4px;
-  font-family: var(--brodtekst);
   font-size: 0.85rem;
   font-weight: 400;
   color: var(--dempet);
 }
 
 .skjema input,
+.skjema select,
 .skjema textarea {
   width: 100%;
   padding: 12px 14px;
-  border: 1.5px solid #c9ced4;
-  border-radius: 10px;
-  background: var(--hvit);
-  color: var(--svart);
+  border: 1.5px solid #cfc2cc;
+  border-radius: 12px;
+  background: var(--flate);
+  color: var(--blekk);
   font: inherit;
 }
 
@@ -373,13 +594,10 @@ main > .interesse {
 }
 
 .skjema input:focus,
+.skjema select:focus,
 .skjema textarea:focus {
-  outline: 3px solid var(--gull-lys);
-  border-color: var(--gull-mork);
-}
-
-.skjema button {
-  cursor: pointer;
+  outline: 3px solid var(--rosa-dyp);
+  border-color: var(--baer);
 }
 
 .skjema button:disabled {
@@ -405,12 +623,13 @@ main > .interesse {
 .skjema-tilbakemelding {
   margin: 1.25rem 0 0;
   padding: 16px 18px;
-  border-radius: 10px;
+  border-radius: 12px;
   font-weight: 500;
 }
 
 .skjema-tilbakemelding.sendt {
-  background: var(--gull-lys);
+  background: var(--flate);
+  border: 1.5px solid var(--baer);
 }
 
 .skjema-tilbakemelding.feil {
@@ -420,23 +639,16 @@ main > .interesse {
 
 /* Kontakt */
 main > .kontakt {
-  max-width: none;
-  background: var(--svart);
-  color: var(--hvit);
+  background: var(--blekk);
+  color: #ffffff;
   text-align: center;
   padding-top: 72px;
   padding-bottom: 72px;
 }
 
-.kontakt h2::after {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .kontakt p {
   max-width: 32em;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 1rem auto 0;
   font-size: 1.15rem;
 }
 
@@ -444,21 +656,35 @@ main > .kontakt {
   justify-content: center;
 }
 
-.kontakt .knapp-lys {
-  border-color: var(--hvit);
-  color: var(--hvit);
+.kontakt .knapp {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: var(--blekk);
 }
 
-.kontakt .knapp-lys:hover,
-.kontakt .knapp-lys:focus-visible {
-  background: var(--hvit);
-  color: var(--svart);
+.kontakt .knapp:hover {
+  background: var(--rosa);
+  border-color: var(--rosa);
+}
+
+.kontakt .knapp-lys {
+  background: transparent;
+  color: #ffffff;
+}
+
+.kontakt .knapp-lys:hover {
+  background: #ffffff;
+  color: var(--blekk);
+}
+
+.kontakt a:focus-visible {
+  outline-color: #ffffff;
 }
 
 /* Bunnen av siden */
 .sidefot {
   padding: 28px var(--marg);
-  background: var(--svart);
+  background: var(--blekk);
   border-top: 1px solid rgba(255, 255, 255, 0.14);
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.9rem;
@@ -476,23 +702,26 @@ main > .kontakt {
   }
 
   .merke img {
-    width: 132px;
+    width: 128px;
   }
 
   .merke-tillegg {
     font-size: 1.4rem;
   }
 
-  .punkter {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
+  .alternativrad,
+  .med-og-selv,
   .skjema {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .lokalene-tekst {
-    max-width: 40em;
+  .alternativ,
+  .oversikt {
+    padding: 36px;
+  }
+
+  .skjema {
+    padding: 36px;
   }
 
   .skjemafelt-bredt {
@@ -500,36 +729,55 @@ main > .kontakt {
   }
 
   main > section {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 88px;
+    padding-bottom: 88px;
+  }
+
+  .etasjer div {
+    grid-template-columns: 220px 1fr;
+    gap: 24px;
   }
 }
 
 /* Skrivebord */
 @media (min-width: 980px) {
-  .topp {
-    grid-template-columns: 1.1fr 0.9fr;
+  .sidemeny {
+    display: flex;
+    gap: 28px;
+    margin-left: auto;
+    margin-right: 12px;
+  }
+
+  .topp-innhold {
+    grid-template-columns: 1.15fr 0.85fr;
     align-items: center;
-    gap: 56px;
+    gap: 64px;
+  }
+
+  main > .topp {
     padding-top: 72px;
   }
 
-  .topp-bilde img {
-    aspect-ratio: 5 / 6;
+  .for-hvem,
+  .lokalene {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 56px;
   }
 
-  .for-hvem {
-    grid-template-columns: 1fr 320px;
+  .alternativ-med-bilde {
+    grid-template-columns: 0.9fr 1.1fr;
     align-items: center;
-    gap: 72px;
+    gap: 48px;
+    padding: 44px;
   }
 
-  .for-hvem-bilde img {
-    aspect-ratio: 4 / 5;
+  .alternativ-bilde img {
+    aspect-ratio: 1 / 1;
   }
 
-  .punkter {
-    grid-template-columns: repeat(4, 1fr);
+  .alternativ-delt {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 48px;
   }
 }
 
