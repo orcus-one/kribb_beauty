@@ -277,20 +277,11 @@ main > .topp {
   max-width: 34em;
 }
 
-/* Rolig lenke ved siden av knappene */
-.tekstlenke {
-  align-self: center;
-  padding: 8px 6px;
-  color: var(--blekk);
-  font-weight: 600;
-  text-decoration: underline;
-  text-decoration-color: var(--baer);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 5px;
-}
-
-.tekstlenke:hover {
-  color: var(--baer);
+/* På mobil står de tre valgene i toppen under hverandre, like brede */
+@media (max-width: 699px) {
+  .topp .knapperad {
+    flex-direction: column;
+  }
 }
 
 .oppstart {
