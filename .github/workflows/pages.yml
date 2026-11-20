@@ -20,6 +20,14 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      # GitHub Pages lar nettleseren beholde filene i ti minutter, og det kan ikke endres.
+      # Derfor får stilarket og skriptet en ny adresse ved hver publisering, slik at
+      # nettleseren henter dem på nytt så snart den har fått den nye siden.
+      - name: Merk stilark og skript med versjon
+        run: |
+          versjon="${GITHUB_SHA::8}"
+          sed -i "s|href=\"stil.css\"|href=\"stil.css?v=${versjon}\"|; s|src=\"skjema.js\"|src=\"skjema.js?v=${versjon}\"|" nettsted/index.html
+          grep -c "?v=${versjon}" nettsted/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
