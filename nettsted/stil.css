@@ -1,4 +1,4 @@
-/* Uttrykket for Kribb Beauty: lys, rosa-lilla grunn, mørk aubergine i teksten og en
+/* Uttrykket for Salon Suites Arendal: lys, rosa-lilla grunn, mørk aubergine i teksten og en
    bærfarge i knapper og priser. Toppbildet har bue i overkant, som et salongspeil. */
 :root {
   --grunn: #fcf8fa;
@@ -84,7 +84,7 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
-/* Sidehodet med logo. Logoen er svart på hvitt, så sidehodet er hvitt. */
+/* Sidehodet med navnet satt i overskriftsskriften */
 .sidehode {
   position: sticky;
   top: 0;
@@ -100,22 +100,26 @@ button:focus-visible {
 
 .merke {
   display: flex;
-  align-items: flex-end;
-  gap: 8px;
+  flex-direction: column;
+  gap: 3px;
   color: var(--blekk);
   text-decoration: none;
+  line-height: 1;
 }
 
-.merke img {
-  width: 104px;
+.merke-navn {
+  font-family: var(--overskrift);
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .merke-tillegg {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 1.15rem;
-  line-height: 1;
   color: var(--baer);
-  padding-bottom: 2px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
 }
 
 .sidemeny {
@@ -701,12 +705,12 @@ main > .kontakt {
     --marg: 32px;
   }
 
-  .merke img {
-    width: 128px;
+  .merke-navn {
+    font-size: 1.55rem;
   }
 
   .merke-tillegg {
-    font-size: 1.4rem;
+    font-size: 0.74rem;
   }
 
   .alternativrad,

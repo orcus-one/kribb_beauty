@@ -1,5 +1,5 @@
 // Sender skjemaet «Meld interesse» til skjematjenesten Formspree, som sender innholdet
-// videre som e-post til Kribb. Adressen under er skjemaets egen adresse hos Formspree,
+// videre som e-post til oss. Adressen under er skjemaets egen adresse hos Formspree,
 // og den er laget for å ligge synlig i en nettside.
 const SKJEMAADRESSE = 'https://formspree.io/f/maeojdlz';
 
@@ -40,7 +40,7 @@ skjema.addEventListener('submit', async (hendelse) => {
 
   // Feltet «email» gjør at mottakeren kan svare avsenderen direkte fra e-posten.
   const innsending = {
-    _subject: 'Ny interesse for Kribb Beauty',
+    _subject: 'Ny interesse for Salon Suites Arendal',
     navn: felt.get('navn').trim(),
     telefon: felt.get('telefon').trim(),
     email: felt.get('epost').trim(),
