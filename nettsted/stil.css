@@ -277,18 +277,20 @@ main > .topp {
   max-width: 34em;
 }
 
-/* Lenke inne i løpende tekst */
+/* Rolig lenke ved siden av knappene */
 .tekstlenke {
-  color: var(--baer);
+  align-self: center;
+  padding: 8px 6px;
+  color: var(--blekk);
   font-weight: 600;
   text-decoration: underline;
+  text-decoration-color: var(--baer);
   text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
-  white-space: nowrap;
+  text-underline-offset: 5px;
 }
 
 .tekstlenke:hover {
-  color: var(--baer-mork);
+  color: var(--baer);
 }
 
 .oppstart {
