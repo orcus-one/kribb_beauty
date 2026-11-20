@@ -937,3 +937,33 @@ main > .kontakt {
     display: none;
   }
 }
+
+/* På mobil og nettbrett står bildet rett under overskriften, og teksten følger etter */
+@media (max-width: 979px) {
+  .topp-innhold {
+    gap: 0;
+  }
+
+  .topp-tekst {
+    display: contents;
+  }
+
+  .topp-tekst > * {
+    order: 3;
+  }
+
+  .topp-tekst > .stedsmerke,
+  .topp-tekst > h1 {
+    order: 1;
+  }
+
+  .topp-tekst > .stedsmerke {
+    justify-self: start;
+  }
+
+  .topp-bilde {
+    order: 2;
+    width: 100%;
+    margin-top: 28px;
+  }
+}
