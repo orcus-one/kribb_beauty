@@ -102,9 +102,9 @@ button:focus-visible {
 .merke {
   display: flex;
   align-items: center;
-  gap: 0.6em;
+  gap: 0.5em;
   color: #ffffff;
-  font-size: 1.3rem;
+  font-size: 1.28rem;
   text-decoration: none;
   line-height: 1;
 }
@@ -112,7 +112,7 @@ button:focus-visible {
 /* Logoen: speilbuen i hvitt med det rosa rommet inni, og navnet i to linjer ved siden av.
    Størrelsen på hele logoen følger skriftstørrelsen på .merke. */
 .merke-emblem {
-  width: 2.15em;
+  width: 1.5em;
   height: auto;
   flex: none;
 }
@@ -135,7 +135,7 @@ button:focus-visible {
 }
 
 .merke-tillegg {
-  margin-top: 0.75em;
+  margin-top: 0.5em;
   color: var(--rosa-lys);
   font-size: 0.6rem;
   font-weight: 600;
@@ -744,7 +744,7 @@ main > .kontakt {
   }
 
   .merke {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 
   .merke-tillegg {
