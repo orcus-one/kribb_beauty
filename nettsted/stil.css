@@ -5,6 +5,7 @@
   --flate: #ffffff;
   --rosa: #f6e4ec;
   --rosa-dyp: #edcfdc;
+  --rosa-lys: #f0b9cf;
   --blekk: #27142c;
   --dempet: #6b5a70;
   --baer: #a3235a;
@@ -75,7 +76,7 @@ p {
 
 section[id],
 article[id] {
-  scroll-margin-top: 92px;
+  scroll-margin-top: 112px;
 }
 
 a:focus-visible,
@@ -93,44 +94,70 @@ button:focus-visible {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 10px var(--marg);
-  background: var(--flate);
-  border-bottom: 1px solid var(--linje);
+  padding: 12px var(--marg);
+  background: var(--blekk);
+  color: #ffffff;
 }
 
 .merke {
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: var(--blekk);
+  gap: 0.6em;
+  color: #ffffff;
+  font-size: 1.3rem;
   text-decoration: none;
   line-height: 1;
 }
 
-.merke img {
-  width: auto;
-  height: 40px;
+/* Logoen: speilbuen i hvitt med det rosa rommet inni, og navnet i to linjer ved siden av.
+   Størrelsen på hele logoen følger skriftstørrelsen på .merke. */
+.merke-emblem {
+  width: 2.15em;
+  height: auto;
+  flex: none;
+}
+
+.merke-rom {
+  fill: var(--rosa-lys);
 }
 
 .merke-tekst {
   display: flex;
   flex-direction: column;
-  gap: 4px;
 }
 
 .merke-navn {
   font-family: var(--overskrift);
-  font-size: 1.3rem;
+  font-size: 1em;
   font-weight: 800;
-  letter-spacing: -0.02em;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
 }
 
 .merke-tillegg {
-  color: var(--baer);
-  font-size: 0.68rem;
+  margin-top: 0.75em;
+  color: var(--rosa-lys);
+  font-size: 0.6rem;
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
+}
+
+.merke:focus-visible,
+.sidehode .knapp:focus-visible,
+.sidemeny a:focus-visible {
+  outline-color: #ffffff;
+}
+
+.sidehode .knapp {
+  background: var(--rosa-lys);
+  border-color: var(--rosa-lys);
+  color: var(--blekk);
+}
+
+.sidehode .knapp:hover {
+  background: #ffffff;
+  border-color: #ffffff;
 }
 
 .sidemeny {
@@ -138,14 +165,14 @@ button:focus-visible {
 }
 
 .sidemeny a {
-  color: var(--blekk);
+  color: #ffffff;
   font-weight: 500;
   font-size: 0.98rem;
   text-decoration: none;
 }
 
 .sidemeny a:hover {
-  color: var(--baer);
+  color: var(--rosa-lys);
 }
 
 /* Knapper */
@@ -716,12 +743,12 @@ main > .kontakt {
     --marg: 32px;
   }
 
-  .merke-navn {
-    font-size: 1.55rem;
+  .merke {
+    font-size: 1.5rem;
   }
 
   .merke-tillegg {
-    font-size: 0.74rem;
+    font-size: 0.66rem;
   }
 
   .alternativrad,
