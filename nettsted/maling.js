@@ -1,7 +1,8 @@
 // Trafikkmåling med Google Analytics, bare for besøkende som har sagt ja.
 // Ingenting hentes fra Google, og ingen informasjonskapsler settes, før samtykket er gitt.
-// Så lenge MALINGS_ID står tom, er målingen slått av, og spørsmålet om samtykke vises ikke.
-const MALINGS_ID = '';
+// MALINGS_ID er Google-taggen for salonsuites.no. Den sender tallene til Google Analytics.
+// Står den tom, er målingen slått av, og spørsmålet om samtykke vises ikke.
+const MALINGS_ID = 'GTM-NJPCB22N';
 
 // Valget lagres i nettleseren til den besøkende, slik at vi ikke spør på nytt ved hvert besøk.
 const NOKKEL = 'samtykke-maling';
@@ -26,11 +27,17 @@ function startMaling() {
   if (window.dataLayer) return;
   window.dataLayer = [];
   window.gtag = function () { window.dataLayer.push(arguments); };
+  // Samtykket gjelder bare måling av trafikk, ikke annonsering.
+  window.gtag('consent', 'default', {
+    analytics_storage: 'granted',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+  });
   window.gtag('js', new Date());
-  window.gtag('config', MALINGS_ID);
   const skript = document.createElement('script');
   skript.async = true;
-  skript.src = 'https://www.googletagmanager.com/gtag/js?id=' + MALINGS_ID;
+  skript.src = 'https://www.googletagmanager.com/gtm.js?id=' + MALINGS_ID;
   document.head.appendChild(skript);
 }
 
