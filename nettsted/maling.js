@@ -1,5 +1,6 @@
 // Trafikkmåling med Google Analytics, bare for besøkende som har sagt ja.
-// Ingenting hentes fra Google, og ingen informasjonskapsler settes, før samtykket er gitt.
+// Midlertidig ligger taggen i index.html og lastes for alle, uten informasjonskapsler, til den
+// er verifisert hos Google. Informasjonskapsler settes først når den besøkende har godtatt.
 // MALINGS_ID er Google-taggen for salonsuites.no. Den sender tallene til Google Analytics.
 // Står den tom, er målingen slått av, og spørsmålet om samtykke vises ikke.
 const MALINGS_ID = 'GTM-NJPCB22N';
@@ -24,7 +25,11 @@ function lagreValg(valg) {
 }
 
 function startMaling() {
-  if (window.dataLayer) return;
+  // Ligger taggen allerede i siden, holder det å melde fra at målingen er godtatt.
+  if (window.gtag) {
+    window.gtag('consent', 'update', { analytics_storage: 'granted' });
+    return;
+  }
   window.dataLayer = [];
   window.gtag = function () { window.dataLayer.push(arguments); };
   // Samtykket gjelder bare måling av trafikk, ikke annonsering.
@@ -61,13 +66,11 @@ function visSporsmal() {
   boks.setAttribute('aria-label', 'Samtykke til trafikkmåling');
   boks.innerHTML =
     '<div class="samtykke-innhold">' +
-    '<p><strong>Er det greit at vi måler besøket ditt?</strong> ' +
-    'Vi bruker Google Analytics for å se hvor mange som besøker siden, og hva de leser. ' +
-    'Det setter informasjonskapsler i nettleseren din, og det gjør vi bare hvis du sier ja. ' +
+    '<p>Vi bruker informasjonskapsler til å måle trafikken på siden. ' +
     '<a href="personvern.html">Les mer om personvern</a></p>' +
     '<div class="samtykke-valg">' +
-    '<button type="button" class="knapp knapp-liten" data-valg="ja">Ja, det er greit</button>' +
-    '<button type="button" class="knapp knapp-liten" data-valg="nei">Nei takk</button>' +
+    '<button type="button" class="knapp knapp-liten" data-valg="ja">Godta</button>' +
+    '<button type="button" class="knapp knapp-liten" data-valg="nei">Avslå</button>' +
     '</div></div>';
 
   boks.addEventListener('click', (hendelse) => {

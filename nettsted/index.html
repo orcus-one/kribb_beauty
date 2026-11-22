@@ -8,6 +8,24 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://salonsuites.no/">
 
+  <!-- Google-taggen for trafikkmåling. Midlertidig lastet for alle, til taggen er verifisert
+       hos Google. Den setter ikke informasjonskapsler før den besøkende har godtatt det.
+       Valget håndteres i maling.js. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    var godtatt = false;
+    try { godtatt = localStorage.getItem('samtykke-maling') === 'ja'; } catch (feil) {}
+    gtag('consent', 'default', {
+      analytics_storage: godtatt ? 'granted' : 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+    gtag('js', new Date());
+  </script>
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-NJPCB22N"></script>
+
   <!-- Deling i sosiale medier og meldinger -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="nb_NO">
