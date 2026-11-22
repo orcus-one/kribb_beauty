@@ -967,3 +967,115 @@ main > .kontakt {
     margin-top: 28px;
   }
 }
+
+/* Spørsmålet om samtykke til trafikkmåling, nederst på skjermen */
+.samtykke {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  padding: 18px var(--marg);
+  background: var(--blekk);
+  color: #ffffff;
+  box-shadow: 0 -10px 30px rgba(39, 20, 44, 0.25);
+}
+
+.samtykke-innhold {
+  display: grid;
+  gap: 14px;
+  max-width: var(--sidebredde);
+  margin: 0 auto;
+}
+
+.samtykke p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.samtykke a {
+  color: var(--rosa-lys);
+}
+
+/* De to valgene er like store og like tydelige */
+.samtykke-valg {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.samtykke .knapp {
+  background: var(--rosa-lys);
+  border-color: var(--rosa-lys);
+  color: var(--blekk);
+}
+
+.samtykke .knapp:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+.samtykke :focus-visible {
+  outline-color: #ffffff;
+}
+
+@media (min-width: 900px) {
+  .samtykke-innhold {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 32px;
+  }
+}
+
+/* Lenkene i bunnteksten */
+.sidefot a,
+.sidefot button {
+  color: inherit;
+}
+
+.sidefot button {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.sidefot-lenker {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 20px;
+}
+
+/* Siden med personvernerklæringen */
+.personvern {
+  max-width: 46em;
+  margin: 0 auto;
+  padding: 56px var(--marg) 72px;
+}
+
+.personvern h1 {
+  font-size: clamp(2rem, 5.5vw, 3rem);
+}
+
+.personvern h2 {
+  margin-top: 2.4rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.45rem;
+}
+
+.personvern .ingress {
+  max-width: none;
+  color: var(--dempet);
+}
+
+.personvern li {
+  margin-bottom: 0.4rem;
+}
+
+.personvern a {
+  color: var(--baer);
+}

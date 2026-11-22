@@ -26,8 +26,8 @@ jobs:
       - name: Merk stilark og skript med versjon
         run: |
           versjon="${GITHUB_SHA::8}"
-          sed -i "s|href=\"stil.css\"|href=\"stil.css?v=${versjon}\"|; s|src=\"skjema.js\"|src=\"skjema.js?v=${versjon}\"|" nettsted/index.html
-          grep -c "?v=${versjon}" nettsted/index.html
+          sed -i "s|href=\"stil.css\"|href=\"stil.css?v=${versjon}\"|; s|src=\"skjema.js\"|src=\"skjema.js?v=${versjon}\"|; s|src=\"maling.js\"|src=\"maling.js?v=${versjon}\"|" nettsted/*.html
+          grep -c "?v=${versjon}" nettsted/*.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
