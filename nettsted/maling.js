@@ -69,8 +69,8 @@ function visSporsmal() {
     '<p>Vi bruker informasjonskapsler til å måle trafikken på siden. ' +
     '<a href="personvern.html">Les mer om personvern</a></p>' +
     '<div class="samtykke-valg">' +
-    '<button type="button" class="knapp knapp-liten" data-valg="ja">Godta</button>' +
     '<button type="button" class="knapp knapp-liten" data-valg="nei">Avslå</button>' +
+    '<button type="button" class="knapp knapp-liten" data-valg="ja">Godta</button>' +
     '</div></div>';
 
   boks.addEventListener('click', (hendelse) => {
