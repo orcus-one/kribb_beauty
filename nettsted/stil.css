@@ -998,7 +998,7 @@ main > .kontakt {
   color: var(--rosa-lys);
 }
 
-/* De to valgene er like store og like tydelige */
+/* De to valgene er like store. Godta er fylt, avslå har bare ramme. */
 .samtykke-valg {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1078,4 +1078,15 @@ main > .kontakt {
 
 .personvern a {
   color: var(--baer);
+}
+
+.samtykke .knapp[data-valg="nei"] {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #ffffff;
+}
+
+.samtykke .knapp[data-valg="nei"]:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #ffffff;
 }
