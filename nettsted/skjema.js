@@ -40,7 +40,7 @@ skjema.addEventListener('submit', async (hendelse) => {
 
   // Feltet «email» gjør at mottakeren kan svare avsenderen direkte fra e-posten.
   const innsending = {
-    _subject: 'Ny interesse for Salon Suites Arendal',
+    _subject: 'Ny interesse for Salonghuset Arendal',
     navn: felt.get('navn').trim(),
     telefon: felt.get('telefon').trim(),
     email: felt.get('epost').trim(),
