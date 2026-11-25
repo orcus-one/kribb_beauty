@@ -342,6 +342,97 @@ figcaption {
   font-size: 1.2rem;
 }
 
+/* De tre veiene: stolleie, eget lokale og Salonghuset */
+.veiene {
+  max-width: var(--sidebredde);
+  margin: 0 auto;
+}
+
+.veirad {
+  display: grid;
+  gap: 20px;
+}
+
+.vei {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 28px 24px;
+  border: 1px solid var(--linje);
+  border-radius: var(--runding);
+  background: var(--flate);
+}
+
+.vei h3 {
+  font-size: clamp(1.5rem, 3.4vw, 1.85rem);
+}
+
+.vei-kort {
+  margin: 0.8rem 0 0;
+  font-size: 1.08rem;
+  font-weight: 500;
+}
+
+.punkter {
+  display: grid;
+  gap: 14px;
+  width: 100%;
+  margin: 1.3rem 0 0;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--linje);
+}
+
+.punkter dt {
+  color: var(--dempet);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.punkter dd {
+  margin: 2px 0 0;
+}
+
+/* Vår egen vei er den mørke flaten, slik at den skiller seg fra de to andre */
+.vei-vaar {
+  background: var(--blekk);
+  border-color: var(--blekk);
+  color: #ffffff;
+}
+
+.vei-vaar .alternativ-merke {
+  color: var(--rosa-lys);
+}
+
+.vei-vaar .punkter {
+  border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.vei-vaar .punkter dt {
+  color: #cdbfd1;
+}
+
+.vei-vaar .knapp {
+  margin-top: auto;
+  background: #ffffff;
+  border-color: #ffffff;
+  color: var(--blekk);
+}
+
+.vei-vaar .knapp:hover {
+  background: var(--rosa);
+  border-color: var(--rosa);
+}
+
+.vei-vaar .knapp:focus-visible {
+  outline-color: #ffffff;
+}
+
+.vei-vaar .punkter {
+  margin-bottom: 1.6rem;
+}
+
 /* Rom og priser */
 .alternativ {
   display: flex;
@@ -860,6 +951,10 @@ main > .kontakt {
     padding: 36px;
   }
 
+  .vei {
+    padding: 32px 28px;
+  }
+
   .skjema {
     padding: 36px;
   }
@@ -902,6 +997,15 @@ main > .kontakt {
   .lokalene {
     grid-template-columns: 0.8fr 1.2fr;
     gap: 56px;
+  }
+
+  .veirad {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Lik høyde på den korte teksten, så punktene under starter på samme linje i alle tre */
+  .vei-kort {
+    min-height: 5.4rem;
   }
 
   .alternativ-med-bilde {
