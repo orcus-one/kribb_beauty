@@ -1,7 +1,7 @@
 // Trafikkmåling med Google Analytics, bare for besøkende som har sagt ja.
 // Midlertidig ligger taggen i index.html og lastes for alle, uten informasjonskapsler, til den
 // er verifisert hos Google. Informasjonskapsler settes først når den besøkende har godtatt.
-// MALINGS_ID er Google-taggen for salonsuites.no. Den sender tallene til Google Analytics.
+// MALINGS_ID er Google-taggen for salonghuset.no. Den sender tallene til Google Analytics.
 // Står den tom, er målingen slått av, og spørsmålet om samtykke vises ikke.
 const MALINGS_ID = 'GTM-NJPCB22N';
 
