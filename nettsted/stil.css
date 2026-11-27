@@ -230,6 +230,7 @@ main > section {
 .alternativene,
 .med-i-prisen,
 .lokalene,
+.sporsmal,
 .topp-innhold {
   max-width: var(--sidebredde);
   margin: 0 auto;
@@ -769,6 +770,50 @@ main > .kassasystem {
 .etasjer dd {
   margin: 0;
   max-width: 40em;
+  color: var(--dempet);
+}
+
+/* Vanlige spørsmål: hvert spørsmål åpnes ved trykk */
+.sporsmal-liste {
+  max-width: 46em;
+  margin-top: 1.75rem;
+  border-bottom: 1px solid var(--linje);
+}
+
+.sporsmal details {
+  border-top: 1px solid var(--linje);
+}
+
+.sporsmal summary {
+  position: relative;
+  padding: 18px 40px 18px 0;
+  font-family: var(--overskrift);
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.sporsmal summary::-webkit-details-marker {
+  display: none;
+}
+
+.sporsmal summary::after {
+  content: '+';
+  position: absolute;
+  top: 14px;
+  right: 6px;
+  color: var(--baer);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.sporsmal details[open] summary::after {
+  content: '−';
+}
+
+.sporsmal details p {
+  margin: 0 0 20px;
   color: var(--dempet);
 }
 
