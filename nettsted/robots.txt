@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Googles KI-tjenester (Gemini) styres av dette navnet. Vi tillater det uttrykkelig.
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://salonghuset.no/sitemap.xml
