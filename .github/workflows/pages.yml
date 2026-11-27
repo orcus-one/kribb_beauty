@@ -26,11 +26,15 @@ jobs:
       - name: Merk stilark og skript med versjon
         run: |
           versjon="${GITHUB_SHA::8}"
-          sed -i "s|href=\"stil.css\"|href=\"stil.css?v=${versjon}\"|; s|src=\"skjema.js\"|src=\"skjema.js?v=${versjon}\"|; s|src=\"maling.js\"|src=\"maling.js?v=${versjon}\"|" nettsted/*.html
+          sed -i "s|href=\"stil.css\"|href=\"stil.css?v=${versjon}\"|; s|src=\"skjema.js\"|src=\"skjema.js?v=${versjon}\"|; s|src=\"maling.js\"|src=\"maling.js?v=${versjon}\"|; s|src=\"kart.js\"|src=\"kart.js?v=${versjon}\"|" nettsted/*.html
           grep -c "?v=${versjon}" nettsted/*.html
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:
           path: nettsted
+      # Publiseringen har flere ganger feilet fordi den spør etter pakken under ett sekund
+      # etter opplastingen, før GitHub har rukket å registrere den. Derfor en kort pause.
+      - name: Vent til pakken er registrert
+        run: sleep 15
       - id: deployment
         uses: actions/deploy-pages@v5

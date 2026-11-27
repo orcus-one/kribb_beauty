@@ -772,6 +772,375 @@ main > .kassasystem {
   color: var(--dempet);
 }
 
+/* Forsiden: salongene i huset */
+.salongene,
+.finn-oss {
+  max-width: var(--sidebredde);
+  margin: 0 auto;
+}
+
+/* Forsiden går rett på salongene, med bare en kort innledning over kortene */
+main > .salongene {
+  padding-top: 36px;
+}
+
+.forside-innledning {
+  max-width: 46em;
+  margin-bottom: 1.75rem;
+}
+
+.forside-innledning h1 {
+  font-size: clamp(2rem, 5.4vw, 3.1rem);
+}
+
+.forside-innledning > p:last-child {
+  margin: 0.9rem 0 0;
+  color: var(--dempet);
+  font-size: 1.12rem;
+}
+
+/* Overskrift for hver by over salongene som holder til der. */
+.by-topp {
+  max-width: 46em;
+  margin: 2.25rem 0 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1.5px solid color-mix(in srgb, currentColor 14%, transparent);
+}
+
+.by-topp h2 {
+  margin: 0;
+}
+
+.by-topp > p:last-child {
+  margin: 0.5rem 0 0;
+  color: var(--dempet);
+}
+
+/* Fram til åpning: salongene på forsiden er eksempler, og det sier vi tydelig. Merknaden,
+   merket på hvert kort og reglene for .salong-eksempel fjernes når salongene er ekte. */
+.eksempelmerknad {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 24px;
+  margin: 0 0 1.75rem;
+  padding: 18px 22px;
+  border-radius: var(--runding);
+  background: var(--rosa);
+}
+
+.eksempelmerknad p {
+  flex: 1 1 22em;
+  margin: 0;
+}
+
+.eksempelmerke {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 1;
+  margin: 0;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--blekk);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Bestilling, telefon og sosiale medier i eksemplene er tekst, ikke lenker */
+.salong-eksempel .salong-kontakt .knapp {
+  cursor: default;
+  pointer-events: none;
+}
+
+.salong-ellers span {
+  color: var(--blekk);
+  font-weight: 600;
+}
+
+.salong-some span {
+  display: inline-block;
+  padding: 5px 13px;
+  border: 1.5px solid var(--linje);
+  border-radius: 999px;
+  color: var(--blekk);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.salongrad {
+  display: grid;
+  gap: 20px;
+}
+
+.salong {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--linje);
+  border-radius: var(--runding);
+  background: var(--flate);
+}
+
+/* Plassen til salongens bilde. Til bildene kommer, står speilbuen på en farget flate. */
+.salong-bilde {
+  position: relative;
+  height: 190px;
+  background: var(--rosa);
+}
+
+.salong-bilde::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 104px;
+  height: 138px;
+  border-radius: 999px 999px 0 0;
+  background: rgba(255, 255, 255, 0.6);
+  transform: translateX(-50%);
+}
+
+.salong-bilde-1 { background: linear-gradient(135deg, var(--rosa-dyp), var(--rosa-lys)); }
+.salong-bilde-2 { background: linear-gradient(135deg, var(--blekk), #5a3463); }
+.salong-bilde-3 { background: linear-gradient(135deg, #e9d8b8, var(--messing)); }
+.salong-bilde-4 { background: linear-gradient(135deg, var(--rosa-lys), var(--baer)); }
+.salong-bilde-5 { background: linear-gradient(135deg, var(--rosa), var(--rosa-dyp)); }
+
+.salong-innhold {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+}
+
+.salong h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.7rem;
+}
+
+/* Slik kundene når salongen: timebestilling, telefon eller e-post, og sosiale medier */
+.salong-kontakt {
+  width: 100%;
+  margin-top: auto;
+}
+
+.salong-ellers {
+  margin: 0.7rem 0 0;
+  font-size: 0.95rem;
+  color: var(--dempet);
+}
+
+.salong-ellers a {
+  color: var(--blekk);
+  font-weight: 600;
+}
+
+.salong-some {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 1.1rem 0 0;
+  padding: 1rem 0 0;
+  border-top: 1px solid var(--linje);
+  list-style: none;
+}
+
+.salong-some a {
+  display: inline-block;
+  padding: 5px 13px;
+  border: 1.5px solid var(--linje);
+  border-radius: 999px;
+  color: var(--blekk);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.salong-some i {
+  margin-right: 7px;
+  color: var(--baer);
+  font-size: 1.05em;
+}
+
+.salong-some a:hover {
+  border-color: var(--baer);
+  color: var(--baer);
+}
+
+.salong-innhold > p:not(.alternativ-merke) {
+  color: var(--dempet);
+}
+
+/* Kortene er klikkbare: bildet, navnet og lenken «Les mer» går til salongens egen side */
+a.salong-bilde {
+  display: block;
+}
+
+.salong h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.salong h3 a:hover,
+.les-mer:hover {
+  color: var(--baer);
+}
+
+.les-mer {
+  margin-bottom: 1.3rem;
+  color: var(--blekk);
+  font-weight: 600;
+}
+
+.les-mer::after {
+  content: ' \2192';
+}
+
+/* Siden til én salong, som kan stå i stedet for en egen nettside */
+.salongside {
+  max-width: var(--sidebredde);
+  margin: 0 auto;
+  padding: 28px var(--marg) 72px;
+}
+
+.tilbake {
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.tilbake a {
+  color: var(--blekk);
+}
+
+.tilbake a::before {
+  content: '\2190  ';
+}
+
+.salongside-topp {
+  display: grid;
+  gap: 32px;
+}
+
+.salongside-tekst h1 {
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+}
+
+.salongside-tekst .salong-kontakt {
+  margin-top: 1.75rem;
+}
+
+/* Inntil fire bilder per salong, to og to */
+.galleri {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  align-self: start;
+}
+
+.galleri .salong-bilde,
+.galleri img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 16px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.salongside-sted {
+  margin-top: 3rem;
+}
+
+@media (min-width: 980px) {
+  .salongside-topp {
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+}
+
+/* Det siste kortet er inngangen for frisører som vil leie rom */
+.salong-ledig {
+  justify-content: center;
+  border: 1.5px dashed var(--rosa-lys);
+  background: var(--rosa);
+}
+
+.salong-ledig .salong-innhold {
+  flex: none;
+}
+
+.salong-ledig .knapp {
+  margin-top: 0.5rem;
+}
+
+/* Forsiden: finn oss */
+.finn-oss {
+  display: grid;
+  gap: 24px;
+}
+
+.finn-oss-tekst > p {
+  max-width: 40em;
+  font-size: 1.2rem;
+}
+
+/* Kartet under «Finn oss». Flaten står der til den besøkende ber om kartet. */
+.kart {
+  grid-column: 1 / -1;
+}
+
+.kart-flate,
+.kart iframe {
+  display: flex;
+  width: 100%;
+  height: 340px;
+  border: 1px solid var(--linje);
+  border-radius: var(--runding);
+}
+
+.kart-flate {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background:
+    linear-gradient(var(--linje) 1px, transparent 1px) 0 0 / 100% 56px,
+    linear-gradient(90deg, var(--linje) 1px, transparent 1px) 0 0 / 56px 100%,
+    var(--rosa);
+}
+
+.kart-adresse {
+  margin: 0;
+  font-family: var(--overskrift);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.kart-merknad {
+  margin: 10px 0 0;
+  color: var(--dempet);
+  font-size: 0.9rem;
+}
+
+.kart-merknad a {
+  color: var(--blekk);
+  font-weight: 600;
+}
+
+@media (min-width: 700px) {
+  .kart-flate,
+  .kart iframe {
+    height: 420px;
+  }
+}
+
 /* Meld interesse */
 main > .interesse {
   background: var(--rosa);
@@ -942,6 +1311,7 @@ main > .kontakt {
 
   .alternativrad,
   .med-og-selv,
+  .salongrad,
   .skjema {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -993,7 +1363,12 @@ main > .kontakt {
     padding-top: 72px;
   }
 
+  .salongrad {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .for-hvem,
+  .finn-oss,
   .lokalene {
     grid-template-columns: 0.8fr 1.2fr;
     gap: 56px;
